@@ -1,0 +1,205 @@
+:root {
+    --mainColor: white;
+} 
+body {
+    background-color: rgb(11, 13, 23) ;
+    font-family: "Barlow Condensed", sans-serif; 
+    color: white;
+    font-size: 15px;    
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+}    
+/* Start Header */
+ul li a{ 
+    color: var(--mainColor);  
+    text-decoration: none; 
+    text-transform: uppercase;
+} 
+nav ul {
+    display: flex;
+    gap: 40px;    
+    margin-left: 300px; 
+    list-style: none;
+} 
+.logo {
+    transform: translate(50px , 50px);  
+    cursor: pointer;
+} 
+.active {
+    border-bottom: 3px solid white; 
+    padding-bottom: 20px;
+} 
+.active:hover {
+    border-bottom: 3px solid #777;
+    transition: 0.25s; 
+}
+nav ul li a:hover {
+    border-bottom: 3px solid #777;
+    padding-bottom: 20px;
+    transition: 0.25s;     
+}  
+html {
+    scroll-behavior: smooth;
+}
+/* End Header */ 
+/* Start Header Mobile */
+.sidemenu {
+    position: fixed;  
+    top: 0; 
+    right: 0; 
+    height: 100%; 
+    width: 0px; 
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+   -webkit-backdrop-filter: blur(20px); 
+   z-index: 9999;
+   display: none;
+   overflow: hidden;
+   display: flex; 
+}
+.sidemenu a{
+    text-decoration: none; 
+    color: var(--mainColor);
+    padding: 8px;    
+    text-transform: uppercase;
+    flex-direction: column;    
+    display: block;    
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+#menu {
+    transition: 0.6s; 
+} 
+.mainbox {
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    display: none;
+    font-size: 25px;
+} 
+.sidemenu .closebtn{
+    position: absolute; 
+    top: 0;
+    right: 20px;
+    font-size: 50px;
+} 
+.page_desc {     
+    text-transform: uppercase;
+    margin-top: 40px; 
+    margin-left: 50px;   
+}
+.page_desc .count {
+    opacity: 0.5;  
+}
+/* End Header Mobile */ 
+/* Start Section */
+.section .container {
+    display: flex;
+} 
+.section .container nav ul{
+    transform: translateX(-220px); 
+    gap: 20px; 
+    color: rgba(208, 214, 249) ;
+} 
+.section .container nav{
+    margin-left: 80px;
+    margin-top: -10px;
+}
+.section .container nav h2 {
+    text-transform: uppercase; 
+    font-size: 90px;
+    margin-left: 120px; 
+    font-weight: bold;     
+}
+.section .container nav .content {   
+    margin-top: -60px;
+    color: rgb(208, 214, 249);
+    line-height: 1.7; 
+    font-size: 13px;
+    max-width: 330px;
+    transform: translateX(120px);
+    border-bottom: 1px solid #777;
+    padding-bottom: 25px;
+}
+.infos {
+    display: flex;
+    gap: 70px;
+    text-transform: uppercase;
+    margin-left: 120px;
+    margin-top: 20px;
+    font-size: 16px;        
+} 
+.one,.two {
+    color: rgb(208, 214, 249);     
+}
+.time,.three {
+    margin-top: 20px;
+}
+.moon {
+    margin-left: 30px;
+    margin-top: 30px;
+    animation-name: moon; 
+    animation-iteration-count: infinite; 
+    animation-duration: 4s;  
+    animation-timing-function: linear;
+} 
+@keyframes moon {
+    0% {
+        margin-bottom: 20px;
+    } 
+    100% {
+        margin-top: 20px;
+    }
+}
+.mars2,.titan2,.europa2 {
+    display: none;
+}
+/* End Section */
+/* Start Responsive Mobile */
+@media(max-width: 767px) {
+    nav ul li a {
+        display: none;
+    } 
+    .logo {
+        margin-top: -30px;
+        margin-left: -30px;
+    }     
+    .sidemenu {
+        display: block
+    }
+    .mainbox {
+        display: block;
+        transform: translate(-50px , 30px);
+    }  
+    .page_desc {
+        margin-left: 30%
+    }
+    .moon {
+        width: 150px; 
+        height: 150px; 
+        margin-left: 30%;
+    } 
+    .section .container nav ul li a{
+        display: block; 
+        transform: translate(-400px , 200px)
+    }
+    .mainbox {
+        transform: translate(-600px); 
+        margin-top: 20px;
+    }
+    .section .container nav h2 {
+        transform: translate(-400px,130px);
+    }
+    .section .container nav .content {
+        transform: translate(-320px,130px);
+    }
+    .infos {
+        transform: translate(-400px,130px);
+    }
+    .sidemenu {
+        transform: translate(-600px);
+    }
+}
+/* End Responsive Mobile */
